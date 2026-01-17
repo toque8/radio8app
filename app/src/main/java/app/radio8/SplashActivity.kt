@@ -14,7 +14,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Полноэкранный режим
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -22,12 +21,10 @@ class SplashActivity : AppCompatActivity() {
         
         setContentView(R.layout.activity_splash)
         
-        // Запускаем анимацию вращения
         val splashIcon = findViewById<ImageView>(R.id.splash_icon)
         val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_forever)
         splashIcon.startAnimation(rotateAnimation)
         
-        // Через 2.5 секунды переходим к главному экрану
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
