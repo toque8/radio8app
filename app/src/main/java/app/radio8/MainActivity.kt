@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
         
         findViewById<Button>(R.id.stop_btn).setOnClickListener {
-            audioService?.stopPlayback() ?: run {
+            audioService?.pauseResumePlayback() ?: run {
                 Toast.makeText(this, "Service not connected", Toast.LENGTH_SHORT).show()
             }
         }
