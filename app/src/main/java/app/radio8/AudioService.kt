@@ -234,7 +234,7 @@ class AudioService : Service(), MediaPlayer.OnCompletionListener {
         return START_NOT_STICKY
     }
 
-    override fun onBind(intent: Intent?): IBinder = LocalBinder()
+    override fun onBind(intent: Intent?): IBinder = LocalBinder() 
 
     override fun onDestroy() {
         mediaPlayer?.release()
